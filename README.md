@@ -1,16 +1,16 @@
 # Assignment-1-Class-based-Inheritance-and-Virtual-Dispatch-in-Java
-Assignment 1: Class-based Inheritance and Virtual Dispatch in Java
-Due Friday, September 18 at 11:59 PM
+**Assignment 1: Class-based Inheritance and Virtual Dispatch in Java
+**Due Friday, September 18 at 11:59 PM
 
-Goals for This Assignment
+**Goals for This Assignment**
 By the time you have completed this work, you should be able to:
 
-Use class-based inheritance to implement different behaviors for the same method
-Implement an immutable list
-Use recursion to implement basic list operations
+   -Use class-based inheritance to implement different behaviors for the same method
+   -Implement an immutable list
+   -Use recursion to implement basic list operations
 
-Provided files:
-   ImmutableList.java
+*Provided files:*
+  ImmutableList.java
   ImmutableListTest.java
   Cons.java
   Nil.java
@@ -19,20 +19,20 @@ Provided files:
   makefile
   
 Step-by-Step Instructions
-Step 1: Download Needed Code
+**Step 1: Download Needed Code**
 Download everything from the links above into a single directory.
 
-Step 2: Read and Understand Provided Code
+**Step 2: Read and Understand Provided Code**
 For this assignment, you'll be working with an immutable linked list implementation, a type of persistent data structure. While you (hopefully!) are familiar with linked lists, this implementation is likely very different from the one you're used to. Notably:
 
-Existing lists cannot be modified (the immutable/persistant part). Operations which would normally modify the list (like append) instead return a new list, reflecting the result of the operation. For example, [1, 2].append([3, 4, 5]) returns the list [1, 2, 3, 4, 5], leaving the original lists [1, 2] and [3, 4, 5] unmodified.
+  Existing lists cannot be modified (the immutable/persistant part). Operations which would normally modify the list (like append) instead return a new list, reflecting the result of the operation. For example, [1, 2].append([3, 4, 5]) returns the list [1, 2, 3, 4, 5], leaving the original lists [1, 2] and [3, 4, 5] unmodified.
 Instead of using null to represent the end of a list, we instead use an instance of class Nil.
 Class Cons corresponds to the normal Node class, with the caveat that tail (representing the rest of the list) cannot be null. Per the prior bullet, if we want to represent a list where tail is empty, then we should have an instance of Nil there.
 There is no special class holding the head of a list. Instead, Cons and Nil are both fully-featured lists in and of themselves. This is one of the reasons we use Nil instead of null, as we can meaningfully call methods on Nil (unlike null).
 Cons and Nil both implement the ImmutableList interface. If something wants to take a list as a parameter, it should take an ImmutableList; which could be either an empty list (Nil) or a non-empty list (Cons).
 In addition to the above bullets, there is a provided JUnit 4 test suite in ImmutableListTest.java. There is also a makefile (makefile), which can be used to make it easier to compile and run the code on a system with make installed (easy on Linux and Mac, not so easy on Windows).
 
-Step 3: (Try to) Compile and Run the Tests
+**Step 3: (Try to) Compile and Run the Tests**
 If you have make installed, you can compile the code and subsequently run the test suite with:
 
 make
@@ -70,14 +70,15 @@ contains: returns true if the given list contains the given element, else false.
 Example calls to these methods are in ImmutableList.java.
 
 Restrictions
-For full credit, your code:
+
+**For full credit, your code:**
 
 Can only modify Cons.java and Nil.java; I'll only look at these two files.
 CANNOT use loops (no for, foreach, while, or do-while). Any provided code that uses loops is ok.
 CANNOT use conditionals (no if, switch, or ternary ((...) ? ... : ...)). Any provided code that uses conditionals is ok.
 These restrictions will force you to use recursion for a correct solution, and will also force you to fully exploit virtual dispatch (also known as dynamic dispatch, polymorphism, and ad-hoc polymorphism). While these restrictions will likely be annoying, it will force you to use a key object-oriented feature (virtual dispatch), as well as serve as good practice for later in the course (recursion).
 
-Hints
+**Hints**
 It's recommended to first write method stubs for all the methods you need to implement. This will get all the code compiling, but the tests won't pass. This is still progress, and this way you can focus on getting one set of tests (or even just one test) to pass at a time.
 Mentally, whenever you think something like:
 if (list is empty) {
