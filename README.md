@@ -10,13 +10,19 @@ By the time you have completed this work, you should be able to:
    -Use recursion to implement basic list operations
 
 *Provided files:*
-  ImmutableList.java
-  ImmutableListTest.java
-  Cons.java
-  Nil.java
-  hamcrest-2.2.jar
-  junit-4.13.jar
-  makefile
+ ImmutableList.java  
+  
+ ImmutableListTest.java
+ 
+ Cons.java
+ 
+ Nil.java
+ 
+ hamcrest-2.2.jar
+ 
+ junit-4.13.jar
+ 
+ makefile
   
 Step-by-Step Instructions
 
