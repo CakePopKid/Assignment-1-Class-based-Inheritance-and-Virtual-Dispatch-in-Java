@@ -19,6 +19,7 @@ By the time you have completed this work, you should be able to:
   makefile
   
 Step-by-Step Instructions
+
 **Step 1: Download Needed Code**
 Download everything from the links above into a single directory.
 
