@@ -4,7 +4,7 @@ public class Cons implements ImmutableList {
     public final ImmutableList tail;
     // ---END INSTANCE VARIABLES---
 
-    public Cons(final int head, final ImmutableList tail) {
+    public Cons(final int head, final ImmutableList tail){
         this.head = head;
         this.tail = tail;
     } // Cons
@@ -25,4 +25,22 @@ public class Cons implements ImmutableList {
     public int hashCode() {
         return sum();
     } // hashCode
+
+    public int length()
+    {
+        return 1 + tail.length();
+    }
+
+    public int sum() {
+        return this.head + tail.sum();
+    }
+
+    public ImmutableList append (final ImmutableList other) {
+        return new Cons(this.head, this.tail.append(other)) ;
+    }
+
+    public boolean contains (final int value) {
+        return head == value || tail.contains(value);
+    }
+
 } // Cons
